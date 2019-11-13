@@ -1,0 +1,6 @@
+build-essential
+git
+wget
+cmake
+pkg-config
+tar
