@@ -3,8 +3,15 @@ FROM ubuntu:bionic
 WORKDIR /opt/
 
 COPY requirements.sys requirements.sys
+COPY requirements.txt requirements.txt
 
 RUN apt update && xargs apt install -y < requirements.sys
+RUN pip3 install -r requirements.txt
+
+## install gtest
+RUN wget https://github.com/google/googletest/archive/release-1.10.0.tar.gz && \
+    tar -zxvf release-1.10.0.tar.gz && rm release-1.10.0.tar.gz && \
+    cd googletest-release-1.10.0 && mkdir -p build && cd build && cmake .. && make install
 
 ## install Eigen
 RUN wget http://bitbucket.org/eigen/eigen/get/3.3.7.tar.bz2 && \
