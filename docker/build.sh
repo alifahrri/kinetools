@@ -22,7 +22,7 @@ done
 set -- "${POSITIONAL[@]}" # restore positional parameters
 
 if [ -z "$IMAGE" -a "$IMAGE" != " " ]; then
-        IMAGE=cppad
+        IMAGE=kinetools
 fi
 
 docker build -t $IMAGE -f $DIR/dockerfile ${POSITIONAL[@]} $DIR/..

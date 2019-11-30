@@ -1,0 +1,15 @@
+sudo: required
+
+services:
+  - docker
+  
+language: cpp
+
+compiler:
+  - gcc
+
+before_script:
+  - docker build -t kinetools -f docker/dockerfile .
+
+script:
+  - docker run --rm kinetools

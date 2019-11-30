@@ -24,3 +24,12 @@ RUN git clone https://github.com/coin-or/CppAD.git && \
     cd build && cmake .. && make && make install
 
 WORKDIR /app/
+
+COPY examples examples
+COPY include include
+COPY tests tests
+COPY CMakeLists.txt CMakeLists.txt
+
+RUN mkdir build && cd build && cmake .. && make
+
+CMD ["./build/tests/kinetools-test"]
