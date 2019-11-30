@@ -1,6 +1,5 @@
 # include <cppad/cppad.hpp>
 # include <cppad/example/cppad_eigen.hpp>
-# include <cppad/speed/det_by_minor.hpp>
 # include <Eigen/Dense>
 
 #include <iostream>
